@@ -1,0 +1,11 @@
+<div id="register-form" class="auth-form hidden">
+    <h2>Приєднуйтесь до World IT</h2>
+    <form>
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <input type="password" name="password" placeholder="Введи пароль" required>
+        <input type="password" name="confirm_password" placeholder="Повтори пароль" required>
+        <button type="submit">Створити акаунт</button>
+    </form>
+    <p>Вже є аkкаунт? <a href="#" id="login-button">Увійти</a></p>
+</div>

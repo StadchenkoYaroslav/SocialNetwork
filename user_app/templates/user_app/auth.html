@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="auth-container">
+    {% include "user_app/forms/login.html" %}
+    {% include "user_app/forms/reg.html" %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+    <script src="{% static 'user_app/js/auth.js' %}"></script>
+{% endblock %}

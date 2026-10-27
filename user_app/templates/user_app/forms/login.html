@@ -1,0 +1,10 @@
+<div id="login-form" class="auth-form">
+    <h2>Вхід</h2>
+    <form>
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="you@example.com" required>
+        <input type="password" name="password" placeholder="Введи пароль" required>
+        <button type="submit">Увійти</button>
+    </form>
+    <p>Немає акаунта? <a href="#" id="register-button">Зареєструватися</a></p>
+</div>
