@@ -1,10 +1,21 @@
-<div id="login-form" class="auth-form">
-    <h2>Вхід</h2>
-    <form>
+<form method="post" id="loginForm">
+    <div class="row">
+        <h1 id="openRegister">Реєстрація</h1>
+        <h1 class="active">Авторизація</h1>
+    </div>
+    <h4>Раді тебе знову бачити!</h4>
+
+    <div class="form-content">
         {% csrf_token %}
-        <input type="email" name="email" placeholder="you@example.com" required>
-        <input type="password" name="password" placeholder="Введи пароль" required>
-        <button type="submit">Увійти</button>
-    </form>
-    <p>Немає акаунта? <a href="#" id="register-button">Зареєструватися</a></p>
-</div>
+        <label>
+            <p>Електронна пошта</p>
+            <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+
+        <label>
+            <p>Пароль</p>
+            <input type="password" name="password" placeholder="Введи пароль" required>
+        </label>
+    </div>
+    <button type="submit">Увійти</button>
+</form>

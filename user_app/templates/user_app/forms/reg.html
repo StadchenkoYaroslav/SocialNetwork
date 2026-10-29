@@ -1,11 +1,29 @@
-<div id="register-form" class="auth-form hidden">
-    <h2>Приєднуйтесь до World IT</h2>
-    <form>
+<form method="post" id="registerForm" class="opened-form">
+    <div class="row">
+        <h1 class="active">Реєстрація</h1>
+        <h1 id="openLogin">Авторизація</h1>
+    </div>
+    <h4>Приєднуйся до World IT</h4>
+
+    <div class="form-content">
         {% csrf_token %}
-        <input type="email" name="email" placeholder="you@example.com" required>
-        <input type="password" name="password" placeholder="Введи пароль" required>
-        <input type="password" name="confirm_password" placeholder="Повтори пароль" required>
-        <button type="submit">Створити акаунт</button>
-    </form>
-    <p>Вже є аkкаунт? <a href="#" id="login-button">Увійти</a></p>
-</div>
+        <label>
+            <p>Електронна пошта</p>
+            <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+
+        <label>
+            <p>Пароль</p>
+            <input type="password" name="password" placeholder="Введи пароль" required>
+        </label>
+        
+        <label>
+            <p>Підтверди пароль</p>
+            <input type="password" name="confirm_password" placeholder="Повтори пароль" required>
+        </label>
+        
+        
+        
+    </div>
+    <button type="submit">Створити акаунт</button>
+</form>

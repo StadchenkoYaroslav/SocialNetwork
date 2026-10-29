@@ -1,11 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block links %}
+    <link rel="stylesheet" href="{% static 'user_app/css/auth.css' %}">
+{% endblock %}
+
 {% block content %}
+<header>
+    <img src="{% static 'user_app/images/logo.png' %}" alt="Логотип">
+</header>
+
 <div class="auth-container">
-    {% include "user_app/forms/login.html" %}
     {% include "user_app/forms/reg.html" %}
+    {% include "user_app/forms/login.html" %}
 </div>
+
+<img src="{% static 'user_app/images/phone-and-laptop.png' %}" class="phoneandlaptop-image" alt="Телефон и ноутбук">
 {% endblock %}
 
 {% block scripts %}
