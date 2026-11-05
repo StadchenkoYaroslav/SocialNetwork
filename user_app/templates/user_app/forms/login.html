@@ -1,3 +1,5 @@
+
+{% load static %}
 <form method="post" id="loginForm">
     <div class="row">
         <h1 id="openRegister">Реєстрація</h1>
@@ -14,7 +16,10 @@
 
         <label>
             <p>Пароль</p>
-            <input type="password" name="password" placeholder="Введи пароль" required>
+            <div class="password-container">
+                <input type="password" name="password" placeholder="Введи пароль" required>
+                <img src="{% static 'user_app/images/eye.png' %}" alt="Показати пароль" class="eye-icon">
+            </div> 
         </label>
     </div>
     <button type="submit">Увійти</button>

@@ -1,0 +1,10 @@
+<form action="{% url 'verify_code' %}" method="post" id="verificateForm" class="{% if current_form == 'verify_code' %}opened-form{%endif%}">
+    <h1>Підтвердження пошти</h1>
+    <p>Ми надіслали 6-значний код на вашу пошту <b>
+        {% if email %} ({{ email }}) {% endif %}
+    </b>. Введіть його нижче, щоб підтвердити акаунт</p>
+    {% csrf_token %}
+    {{verify_code_form.as_p}}
+    <button type="submit">Підтвердити</button>
+    <p id = "backToRegister">Назад</p>
+</form>

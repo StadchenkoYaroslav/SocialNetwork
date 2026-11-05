@@ -65,7 +65,7 @@ body{
 
 .phoneandlaptop-image {
     width: 679px;
-    height: 527px;
+    height: 450px;
     object-fit: contain;
     margin-left: -120px;
     position: relative;
@@ -136,6 +136,7 @@ form{
 .form-content input:focus {
     outline: 2px solid #543C52;
 }
+
 
 
 button {
