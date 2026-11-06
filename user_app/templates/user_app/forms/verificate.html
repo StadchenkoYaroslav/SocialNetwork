@@ -1,10 +1,28 @@
-<form action="{% url 'verify_code' %}" method="post" id="verificateForm" class="{% if current_form == 'verify_code' %}opened-form{%endif%}">
+<form action="{% url 'verify_code' %}" method="post" id="verificateForm"
+      class="{% if current_form == 'verify_code' %}opened-form{% endif %}">
     <h1>Підтвердження пошти</h1>
-    <p>Ми надіслали 6-значний код на вашу пошту <b>
-        {% if email %} ({{ email }}) {% endif %}
-    </b>. Введіть його нижче, щоб підтвердити акаунт</p>
+
+    <p class="verification-text">
+        Ми надіслали 6-значний код на вашу пошту
+        {% if email %}<b>({{ email }})</b>{% endif %}.
+        Введіть його нижче, щоб підтвердити акаунт
+    </p>
+
     {% csrf_token %}
-    {{verify_code_form.as_p}}
+
+    <label class="code-label">Код підтвердження</label>
+
+    <div class="code-inputs">
+        <input class="code-digit" type="text" inputmode="numeric" maxlength="1" autocomplete="one-time-code" aria-label="Цифра 1">
+        <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Цифра 2">
+        <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Цифра 3">
+        <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Цифра 4">
+        <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Цифра 5">
+        <input class="code-digit" type="text" inputmode="numeric" maxlength="1" aria-label="Цифра 6">
+    </div>
+
+    <input type="hidden" name="code" id="verificationCode">
+
     <button type="submit">Підтвердити</button>
-    <p id = "backToRegister">Назад</p>
+    <p id="backToRegister">Назад</p>
 </form>

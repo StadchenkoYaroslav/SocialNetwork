@@ -94,3 +94,5 @@ class AuthView(TemplateView):
         }
         return context
         
+class MainView(TemplateView):
+    template_name = "user_app/main.html"

@@ -1,5 +1,5 @@
 {% load static %}
-<form method="post" id="registerForm" class="opened-form">
+<form action="{% url 'register' %}" method="post" id="registerForm" class="opened-form">
     <div class="row">
         <h1 class="active">Реєстрація</h1>
         <h1 id="openLogin">Авторизація</h1>
@@ -16,16 +16,20 @@
         <label>
             <p>Пароль</p>
             <div class="password-container">
-                <input type="password" name="password" placeholder="Введи пароль" required>
-                <img src="{% static 'user_app/images/eye.png' %}" alt="Показати пароль" class="eye-icon">
+                <input type="password" name="password1" placeholder="Введи пароль" required>
+                <button class="eye-toggle is-hidden" type="button" aria-label="Показат пароль">
+                    <img src="{% static 'user_app/images/eye.png' %}" alt="">
+                </button>
             </div>    
         </label>
         
         <label>
             <p>Підтверди пароль</p>
             <div class="password-container">
-                <input type="password" name="confirm_password" placeholder="Повтори пароль" required>
-                <img src="{% static 'user_app/images/eye.png' %}" alt="Показати пароль" class="eye-icon">
+                <input type="password" name="password2" placeholder="Повтори пароль" required>
+                <button class="eye-toggle is-hidden" type="button" aria-label="Показать пароль">
+                    <img src="{% static 'user_app/images/eye.png' %}" alt="">
+                </button>
             </div>
         </label>
         
