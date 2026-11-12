@@ -34,7 +34,10 @@ class RegistrationView(CreateView):
         return JsonResponse({"success": True, "email": user.email})
     
     def form_invalid(self, form):
-        return JsonResponse({"success": False, "errors": form.errors})
+        return JsonResponse({
+            "success": False,
+            "errors": form.errors.get_json_data()
+        })
     
     
 class CustomLoginView(LoginView):

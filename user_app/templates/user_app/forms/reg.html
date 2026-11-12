@@ -1,40 +1,59 @@
+
 {% load static %}
+
 <form action="{% url 'register' %}" method="post" id="registerForm" class="opened-form">
     <div class="row">
         <h1 class="active">Реєстрація</h1>
         <h1 id="openLogin">Авторизація</h1>
     </div>
+
     <h4>Приєднуйся до World IT</h4>
 
     <div class="form-content">
         {% csrf_token %}
+
         <label>
             <p>Електронна пошта</p>
-            <input type="email" name="email" placeholder="you@example.com" required>
+            <input
+                type="email"
+                name="email"
+                placeholder="you@example.com"
+                required
+            >
+            <small class="field-error" data-error-for="email"></small>
         </label>
 
         <label>
             <p>Пароль</p>
             <div class="password-container">
-                <input type="password" name="password1" placeholder="Введи пароль" required>
-                <button class="eye-toggle is-hidden" type="button" aria-label="Показат пароль">
-                    <img src="{% static 'user_app/images/eye.png' %}" alt="">
-                </button>
-            </div>    
-        </label>
-        
-        <label>
-            <p>Підтверди пароль</p>
-            <div class="password-container">
-                <input type="password" name="password2" placeholder="Повтори пароль" required>
-                <button class="eye-toggle is-hidden" type="button" aria-label="Показать пароль">
+                <input
+                    type="password"
+                    name="password1"
+                    placeholder="Введи пароль"
+                    required
+                >
+                <button class="eye-toggle is-hidden" type="button" aria-label="Показати пароль">
                     <img src="{% static 'user_app/images/eye.png' %}" alt="">
                 </button>
             </div>
         </label>
-        
-        
-        
+
+        <label>
+            <p>Підтверди пароль</p>
+            <div class="password-container">
+                <input
+                    type="password"
+                    name="password2"
+                    placeholder="Повтори пароль"
+                    required
+                >
+                <button class="eye-toggle is-hidden" type="button" aria-label="Показати пароль">
+                    <img src="{% static 'user_app/images/eye.png' %}" alt="">
+                </button>
+            </div>
+            <small class="field-error" data-error-for="password2"></small>
+        </label>
     </div>
+
     <button type="submit">Створити акаунт</button>
 </form>

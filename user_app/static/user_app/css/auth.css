@@ -261,13 +261,3 @@ button:hover {
     height: 24px;
 }
 
-.eye-toggle.is-hidden::after {
-    content: "";
-    position: absolute;
-    top: 12px;
-    left: -2px;
-    width: 30px;
-    height: 2px;
-    background: #543C52;
-    transform: rotate(-45deg);
-}
